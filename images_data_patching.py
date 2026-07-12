@@ -43,7 +43,7 @@ for i in range(patchnum_files):
     fullpathes_length = len(fullpathes)
     for i, path in enumerate(fullpathes):
         shutil.copy(path, temp_folder + "/" + path.split("/")[-1])
-        print(f"\r[..] Moved {i+1}/{fullpathes_length}.", end="")
+        print(f"\r [..] Image moved {i+1}/{fullpathes_length}.", end="")
     print()
     print(f" [..] Đang chuyển folder temp thành file zip => {zipfile}")
     shutil.make_archive(zipfile, "zip", temp_folder)
