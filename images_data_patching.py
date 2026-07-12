@@ -40,8 +40,11 @@ for i in range(patchnum_files):
     if not os.path.exists(temp_folder):
         os.mkdir(temp_folder)
     print(f" [..] Đang chuyển ảnh vào folder temp => {temp_folder}")
-    for path in fullpathes:
+    fullpathes_length = len(fullpathes)
+    for i, path in enumerate(fullpathes):
         shutil.copy(path, temp_folder + "/" + path.split("/")[-1])
+        print(f"\r[..] Moved {i+1}/{fullpathes_length}.", end="")
+    print()
     print(f" [..] Đang chuyển folder temp thành file zip => {zipfile}")
     shutil.make_archive(zipfile, "zip", temp_folder)
     fullpathes.clear()
