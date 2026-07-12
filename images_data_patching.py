@@ -9,6 +9,7 @@ while True:
     elif filepath_input == "final":
         break
     list_image_folders.append(filepath_input)
+expected_batch = int(input("[?] Nhập batch số lượng ảnh trên mỗi patch file zip\n-> "))
 print()
 
 tempfolder_, zipfolder_ = ('./temp', './zip')
@@ -16,7 +17,6 @@ if not os.path.exists(tempfolder_):
     os.mkdir(tempfolder_)
 if not os.path.exists(zipfolder_):
     os.mkdir(zipfolder_)
-expected_batch = 10000
 folderpathes = [os.listdir(path) for path in list_image_folders]
 filesnum = [len(pathes) for pathes in folderpathes]
 total_data = sum(filesnum)
